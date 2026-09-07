@@ -130,15 +130,15 @@ Then open `http://localhost:5500/` in a browser. The current result panel uses a
 
 ## Deploy Frontend on Vercel
 
-The repository includes `vercel.json`, so the static frontend is configured to deploy from the `frontend/` directory while keeping the project root as the GitHub repository.
+The repository includes `vercel.json`, so Vercel is configured to deploy only the static `frontend/` directory while keeping the project root and Python model code in the GitHub repository. Python auto-detection is disabled because the Python files are training scripts, not Vercel Functions.
 
 1. Open [vercel.com](https://vercel.com/) and sign in with GitHub.
 2. Select **Add New -> Project** and import `Amarhadpad/MedGuide_AI`.
-3. Keep the **Root Directory** as `./`.
-4. Leave the **Framework Preset** as `Other`.
-5. Leave the **Build Command** empty.
-6. Leave the **Output Directory** empty because `vercel.json` routes the static files.
-7. Select **Deploy**.
+4. Keep the **Root Directory** as `./`.
+5. Leave the **Framework Preset** as `Other`.
+6. Leave the **Build Command** empty.
+7. Set **Output Directory** to `frontend` if Vercel asks for an override. The committed `vercel.json` already sets this value.
+8. Select **Deploy**.
 
 Vercel will create a public URL for the frontend. The current hosted experience uses the demo prediction adapter; the Python model requires a separate backend deployment and API integration.
 
