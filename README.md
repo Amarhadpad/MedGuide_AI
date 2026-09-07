@@ -116,6 +116,18 @@ The trained model is written to:
 model/disease_prediction_model.pkl
 ```
 
+## Frontend Prototype
+
+The `frontend/` directory contains a responsive static prototype for the MedGuide AI user experience. It includes symptom search and selection, a care-pathway result view, specialist guidance, and an explainability panel.
+
+Run it locally from the repository root:
+
+```powershell
+python -m http.server 5500 --directory frontend
+```
+
+Then open `http://localhost:5500/` in a browser. The current result panel uses a small demo adapter so the interaction can be reviewed before the FastAPI backend is implemented. The next integration step is to replace that adapter with a request to Model 1 and pass the predicted disease into the future healthcare-system recommendation model.
+
 ## Technology Direction
 
 The planned application stack includes:
