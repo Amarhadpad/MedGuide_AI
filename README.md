@@ -128,6 +128,20 @@ python -m http.server 5500 --directory frontend
 
 Then open `http://localhost:5500/` in a browser. The current result panel uses a small demo adapter so the interaction can be reviewed before the FastAPI backend is implemented. The next integration step is to replace that adapter with a request to Model 1 and pass the predicted disease into the future healthcare-system recommendation model.
 
+## Deploy Frontend on Vercel
+
+The repository includes `vercel.json`, so the static frontend is configured to deploy from the `frontend/` directory while keeping the project root as the GitHub repository.
+
+1. Open [vercel.com](https://vercel.com/) and sign in with GitHub.
+2. Select **Add New -> Project** and import `Amarhadpad/MedGuide_AI`.
+3. Keep the **Root Directory** as `./`.
+4. Leave the **Framework Preset** as `Other`.
+5. Leave the **Build Command** empty.
+6. Leave the **Output Directory** empty because `vercel.json` routes the static files.
+7. Select **Deploy**.
+
+Vercel will create a public URL for the frontend. The current hosted experience uses the demo prediction adapter; the Python model requires a separate backend deployment and API integration.
+
 ## Technology Direction
 
 The planned application stack includes:
